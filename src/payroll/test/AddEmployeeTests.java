@@ -17,7 +17,18 @@ class AddEmployeeTests {
 		Transaction t = new AddHourlyEmployeeTransaction(
 						empId, name, address, hourlyRate);
 		t.execute();
-				
+		// Assertions
+		Employee e = PayrollDatabase.getEmployee(empId);
+		assertNotNull(e);
+		assertEquals(empId, e.getEmpId());
+		assertEquals(name, e.getName());
+		assertEquals(address, e.getAddress());
+		PaymentClassification pc = e.getPaymentClassification();
+		assertTrue(pc instanceof HourlyClassification);
+		HourlyClassification hc = (HourlyClassification) pc;
+		assertEquals(hourlyRate, hc.getHourlyRate(), 0.01);
+		PaymentMethod pm = e.getPaymentMethod();
+		assertTrue(pm instanceof HoldMethod);
 	}
 	
 }
