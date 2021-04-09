@@ -1,6 +1,10 @@
 package payroll.trans;
 
+import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
+import payroll.classification.HourlyClassification;
+import payroll.method.HoldMethod;
 
 public class AddHourlyEmployeeTransaction implements Transaction {
 
@@ -20,7 +24,10 @@ public class AddHourlyEmployeeTransaction implements Transaction {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		Employee e = new Employee(empId, name, address);
+		e.setPaymentClassification(new HourlyClassification(hourlyRate));
+		e.setPaymentMethod(new HoldMethod());
+		PayrollDatabase.save(e);
 	}
 
 }

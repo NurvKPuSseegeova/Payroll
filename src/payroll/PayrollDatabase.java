@@ -12,4 +12,9 @@ public class PayrollDatabase {
 		return employees.get(empId);
 	}
 
+	public static void save(Employee e) {
+		// TODO Auto-generated method stub
+		employees.put(e.getEmpId(),e);
+	}
+
 }
