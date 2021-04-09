@@ -13,7 +13,11 @@ class AddEmployeeTests {
 		String name = "Bill";
 		String address = "Home";
 		double hourlyRate = 12.5;
-		
+		// Actions
+		Transaction t = new AddHourlyEmployeeTransaction(
+						empId, name, address, hourlyRate);
+		t.execute();
+				
 	}
 	
 }
