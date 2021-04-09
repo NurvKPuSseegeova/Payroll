@@ -13,7 +13,7 @@ public class HourlyClassification extends PaymentClassification {
 
 	public double getHourlyRate() {
 		// TODO Auto-generated method stub
-		return 0;
+		return hourlyRate;
 	}
 
 }
