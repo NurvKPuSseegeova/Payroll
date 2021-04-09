@@ -7,8 +7,13 @@ import org.junit.jupiter.api.Test;
 class AddEmployeeTests {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testAddHourlyEmployee() {
+		// Assumptions
+		int empId = 1001;
+		String name = "Bill";
+		String address = "Home";
+		double hourlyRate = 12.5;
+		
 	}
-
+	
 }
