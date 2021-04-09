@@ -5,7 +5,14 @@ public class Employee {
 	private String name;
 	private String address;
 	private PaymentClassification paymentClassification;
+	private PaymentMethod paymentMethod;
 	
+	public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
+	}
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
 	public PaymentClassification getPaymentClassification() {
 		return paymentClassification;
 	}
