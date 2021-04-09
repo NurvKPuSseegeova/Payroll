@@ -4,7 +4,14 @@ public class Employee {
 	private int empId;
 	private String name;
 	private String address;
+	private PaymentClassification paymentClassification;
 	
+	public PaymentClassification getPaymentClassification() {
+		return paymentClassification;
+	}
+	public void setPaymentClassification(PaymentClassification paymentClassification) {
+		this.paymentClassification = paymentClassification;
+	}
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
