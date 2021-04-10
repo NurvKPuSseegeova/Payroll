@@ -1,6 +1,10 @@
 package payroll.trans;
 
+import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
+import payroll.clasification.SalariedClassification;
+import payroll.method.HoldMethod;
 
 public class AddSalariedEmployeeTransaction implements Transaction {
 
@@ -19,7 +23,14 @@ public class AddSalariedEmployeeTransaction implements Transaction {
 
 	@Override
 	public void execute() {
-		//
+		//新建雇员
+		Employee employee = new Employee(empId,name,address);
+		//设置工资计算方式
+		employee.setPaymentClassification(new SalariedClassification(salary));
+		//设置工资支付方法
+		employee.setPaymentMethod(new HoldMethod());
+		//保存到数据库
+		PayrollDatabase.save(employee);
 
 	}
 
