@@ -1,5 +1,7 @@
 package payroll.trans;
 
+import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
 
 public class DeleteEmployeeTransaction implements Transaction {
@@ -8,12 +10,12 @@ public class DeleteEmployeeTransaction implements Transaction {
 
 	public DeleteEmployeeTransaction(int empId) {
 		this.empId = empId;
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+		Employee employee = PayrollDatabase.getEmployee(empId);
 
 	}
 
