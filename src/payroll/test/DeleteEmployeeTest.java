@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import payroll.Transaction;
 import payroll.trans.AddHourlyEmployeeTransaction;
+import payroll.trans.DeleteEmployeeTransaction;
 
 public class DeleteEmployeeTest {
 
@@ -14,5 +16,7 @@ public class DeleteEmployeeTest {
 		int empId = 2001;
 		new AddHourlyEmployeeTransaction(empId,"Bill","Home",12.5).execute();
 	}
+	Transaction t = new DeleteEmployeeTransaction(empId);
+	t.execute();
 
 }
