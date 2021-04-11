@@ -15,8 +15,11 @@ public class DeleteEmployeeTest {
 		
 		int empId = 2001;
 		new AddHourlyEmployeeTransaction(empId,"Bill","Home",12.5).execute();
-	}
+	
 	Transaction t = new DeleteEmployeeTransaction(empId);
 	t.execute();
 
+	Employee e = PayrollDatabase.getEmployee(empId);
+	assertNull(e);
+	}
 }
