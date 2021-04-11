@@ -65,6 +65,7 @@ public void testAddSalariedEmployee() {
 	PaymentMethod pm = e.getPaymentMethod();
 	assertTrue(pm instanceof HoldMethod);
 }
+@Test
 public void testAddCommissionedEmployee() {
 	int empId = 1002;
 	String name = "Bill";
