@@ -4,8 +4,11 @@ import payroll.PaymentClassification;
 
 public class CommissionedClassification extends PaymentClassification {
 
+	private double commissionRate;
+
 	public CommissionedClassification(double salary, double commissionRate) {
-		// TODO Auto-generated constructor stub
+		this.commissionRate = commissionRate;
+		
 	}
 
 	public double getSalary() {
