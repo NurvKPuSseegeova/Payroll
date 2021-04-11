@@ -1,6 +1,7 @@
 package payroll.trans;
 
 import payroll.PaymentClassification;
+import payroll.classification.CommissionedClassification;
 
 public class AddCommissionedEmployeeTransaction extends AddEmployeeTransaction {
 
@@ -18,7 +19,7 @@ public class AddCommissionedEmployeeTransaction extends AddEmployeeTransaction {
 	@Override
 	protected PaymentClassification getPaymentClassification() {
 		
-		return new CommissionedClassification(salary,commissonRate);
+		return new CommissionedClassification(salary,commissionRate);
 	}
 
 }
